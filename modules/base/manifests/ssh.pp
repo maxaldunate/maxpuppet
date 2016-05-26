@@ -1,4 +1,17 @@
 class base::ssh {
+
+	case $osfamily {
+		'RedHat': {$ssh_name = 'sshd'}
+		'Debian': {$ssh_name = 'ssh'}
+		defaul: {fail('OS not support by puppet module SSH')}
+	}
+
+	# $ssh_name = $osfamily ? {
+	# 	'RedHat' => 'sshd',
+	# 	'Debian' => 'ssh',
+	# 	default  => 'value',
+	# }
+	
 	package {'openssh-package':
 		name   => 'openssh-server',
 		ensure => present,
@@ -11,11 +24,11 @@ class base::ssh {
 		group   => 'root',
 		source  => 'puppet:///modules/base/sshd_config',
 		require => Package['openssh-package'],
-		notify  => Service['sshd']
+		notify  => Service['ssh-service'],
 	}
 
-	service {'sshd':
-		name      => 'sshd',
+	service {'ssh-service':
+		name      => $ssh_name,
 		ensure    => running,
 		enable    => true,
 	}
