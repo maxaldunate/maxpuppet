@@ -1,5 +1,7 @@
 class base::params {
 
+	$author = "maxito"
+
 	case $::osfamily {
 		'RedHat': {$ssh_name = 'sshd'}
 		'Debian': {$ssh_name = 'ssh'}
