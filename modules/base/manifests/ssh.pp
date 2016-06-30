@@ -17,6 +17,7 @@ class base::ssh {
 
 	service {'ssh-service':
 		name      => $base::params::ssh_name,
+		#name      => $ssh_name,
 		ensure    => running,
 		alias     => 'ssh-service-name-two',
 		enable    => true,

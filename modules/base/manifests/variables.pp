@@ -11,7 +11,6 @@ class base::variables {
 	notify { "${localvar} is your local var variable": }
 	notify { "${::operatingsystem} is your operating system":}
 
-
 	file { '/root/var_test.txt':
 			content => $topscope,
 			owner   => 'root',
