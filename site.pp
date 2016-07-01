@@ -61,7 +61,7 @@ node puppetagent {
 	include base
 	include base::params
 	include base::variables
-	include ntp
+	class { 'ntp': package => 'ntp', }
 }
 
 node puppetagent.home {

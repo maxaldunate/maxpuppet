@@ -1,1 +1,2 @@
-include ntp
+#include ntp
+class { 'ntp': package => 'ntp', }
