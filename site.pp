@@ -70,4 +70,16 @@ node puppetagent.home {
 	include base::variables
 }
 
+node puppetagent.mrw.lan {
+	include base
+	include base::params
+	include base::variables
+}
+
+node ansible1 {
+	include base
+	include base::params
+	include base::variables
+}
+
 # puppet apply --modulepath=/etc/puppetlabs/code/environments/production/modules -e "include base include base::params include base::variables"
