@@ -36,6 +36,13 @@ node default {
 
 }
 
+node classparameters {
+	include pe_repo::platform::ubuntu_14004_amd64
+	$package = "node scope variable"
+	class { 'ntp':  }
+	include ntp:service
+}
+
 node "maxaldunate2.mylabserver.com" {
 	include pe_repo::platform::ubuntu_14004_amd64
 }

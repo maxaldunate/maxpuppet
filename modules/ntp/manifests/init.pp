@@ -1,5 +1,5 @@
 class ntp (
-	$package = $ntp::params::package_name
+	$package
 	) inherits ntp::params {
 
 	package { 'ntp':
@@ -7,7 +7,9 @@ class ntp (
 			ensure => present,
 	}
 
-	include ntp::file
+	notify {"The variable package is equal to ${package}": }
+
+	class {'ntp::file': template => 'ntp_centos.conf',}
 	include ntp::service
 
 }
