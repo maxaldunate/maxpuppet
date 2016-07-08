@@ -59,9 +59,7 @@ node /^maxaldunate\d{1}.mylabserver.com$/ {
 }
 
 node /^puppetagent.\*$/ {
-	include base
-	include base::params
-	include base::variables
+	include roles::webserver
 }
 
 node puppetagent {

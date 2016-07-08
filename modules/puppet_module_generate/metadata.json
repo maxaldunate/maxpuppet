@@ -1,0 +1,15 @@
+{
+  "name": "max-roles",
+  "version": "0.0.0",
+  "author": "max",
+  "summary": "probando",
+  "license": "Apache-2.0",
+  "source": "git",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
