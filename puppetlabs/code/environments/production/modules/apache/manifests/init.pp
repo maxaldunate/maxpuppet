@@ -10,11 +10,6 @@ class apache (
 	include apache::package
 	include apache::service
 
-	file { $document_root:
-		ensure 	=> directory,
-		recurse => true,
-	}
-
 	file { $log_dir:
 		ensure 	=> directory,
 		recurse => true,
@@ -27,5 +22,11 @@ class apache (
 		vhost_dir     => $vhost_dir,
 	}
 
+	apache::vhost {"maxaldunate1b":
+		port          => 80,
+		document_root => "{$document_root}/maxaldunate1b.mylabserver.com",
+		servername    => "maxaldunate1b.mylabserver.com",
+		vhost_dir     => $vhost_dir,
+	}
 
 }
