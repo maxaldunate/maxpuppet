@@ -39,3 +39,7 @@ node default {
 node "puppetmaster" {
 	include hierademo
 }
+
+node "maxaldunate1.mylabserver.com" {
+	class {'democonsole': param1 => "this is param from site.pp"}
+}
