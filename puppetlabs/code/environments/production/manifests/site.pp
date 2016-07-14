@@ -27,13 +27,9 @@ File { backup => false }
 $topscope = "This is from our site.pp file"
 
 node default {
-	include hierademo
+	include hosts
 }
 
 node "puppetmaster" {
-	include tryclass
-}
-
-node "maxaldunate1.mylabserver.com" {
-	class {'democonsole': param1 => "this is param from site.pp"}
+	include hosts
 }
