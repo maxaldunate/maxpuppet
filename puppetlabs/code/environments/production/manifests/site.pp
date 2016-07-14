@@ -31,5 +31,7 @@ node default {
 }
 
 node "puppetmaster" {
-	include hosts
+	#include hosts
+	include pe_repo::platform::el_7_x86_64
+	include pe_repo::platform::ubuntu_1404_amd64
 }
