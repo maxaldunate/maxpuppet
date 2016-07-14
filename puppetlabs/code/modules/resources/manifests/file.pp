@@ -1,4 +1,4 @@
-class hosts::file {
+class resources::file {
 
 	#puppet resource names are CASE sensitive
 	

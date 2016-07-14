@@ -35,3 +35,11 @@ node "puppetmaster" {
 	include pe_repo::platform::el_7_x86_64
 	include pe_repo::platform::ubuntu_1404_amd64
 }
+
+node "pagubun14" {
+	include tryclass
+}
+
+node "pagcentos7" {
+	include resources::mount
+}

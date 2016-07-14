@@ -1,4 +1,4 @@
-class hosts {
+class resources::hosts {
 
 	#host {'webserver01':
 	#	name         => 'webserver01.mylabserver.com',
